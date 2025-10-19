@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prompt Test Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f0f0f0;
+            border-radius: 4px;
+            min-height: 100px;
+        }
+        .info {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #e3f2fd;
+            border-left: 4px solid #2196F3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Prompt 自動入力テストページ</h1>
+    
+    <div class="info">
+        <p>「開始」ボタンをクリックすると、順番にpromptダイアログが表示されます。</p>
+    </div>
+
+    <button id="startButton">開始</button>
+
+    <div id="result">
+        <h3>入力結果:</h3>
+        <div id="output"></div>
+    </div>
+
+    <script>
+        document.getElementById('startButton').addEventListener('click', function() {
+            // 結果をクリア
+            document.getElementById('output').innerHTML = '';
+
+            // 1つのpromptを表示
+            const name = prompt('お名前を入力してください:');
+            if (name === null) {
+                document.getElementById('output').innerHTML = '<p>キャンセルされました</p>';
+                return;
+            }
+
+            // 結果を表示
+            const resultHTML = `
+                <p><strong>名前:</strong> ${name}</p>
+            `;
+
+            document.getElementById('output').innerHTML = resultHTML;
+        });
+    </script>
+</body>
+</html>
