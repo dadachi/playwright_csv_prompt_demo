@@ -14,19 +14,19 @@ This project automates the process of:
 
 - Ruby (version 3.0 or higher recommended)
 - Playwright
-- Bundler (for dependency management)
 
 ## Installation
 
 1. Clone this repository:
 ```bash
-   git clone <repository-url>
+   git clone https://github.com/dadachi/playwright_csv_prompt_demo.git
    cd playwright_csv_prompt_demo
 ```
 
 2. Install dependencies:
 ```bash
-   bundle install
+   gem install playwright-ruby-client
+   gem install csv
 ```
 
 ## Usage
@@ -38,17 +38,13 @@ ruby automation.rb
 
 ## Input/Output
 
-- **Input**: Place your CSV file with the data to be automated in the project directory
-- **Output**: Results will be exported to a CSV file after automation completes
-
-## Configuration
-
-[Add information about any configuration files or environment variables needed]
+- **input.csv**: Place your CSV file with the data to be automated in the project directory
+- **output.csv**: Results will be exported to a CSV file after automation completes
 
 ## License
 
-[Add your license information]
+MIT License
 
 ## Contributing
 
-[Add contribution guidelines if applicable]
+Contributions are welcome! Please fork the repository, make your changes in a new branch, and submit a pull request.
